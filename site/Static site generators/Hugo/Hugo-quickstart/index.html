@@ -1,0 +1,893 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>Hugo Quickstart.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.07c9fbf5.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="DocTools" class="md-header-nav__button md-logo" aria-label="DocTools">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            DocTools
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Hugo Quickstart.
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../MkDocs/Getting-started/" class="md-tabs__link">
+          Documentation Website Generators
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DocTools" class="md-nav__button md-logo" aria-label="DocTools">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    DocTools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Documentation Website Generators
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Documentation Website Generators" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Documentation Website Generators
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      MkDocs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="MkDocs" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        MkDocs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/Getting-started/" title="MkDocs Quickstart" class="md-nav__link">
+      MkDocs Quickstart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/Material-theme/" title="Material for MkDocs Theme Quickstart." class="md-nav__link">
+      Material for MkDocs Theme Quickstart.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/Github/" title="Publishing your MkDocs website with GitHub pages." class="md-nav__link">
+      Publishing your MkDocs website with GitHub pages.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/netlify/" title="Deploying your MkDocs website on Netlify." class="md-nav__link">
+      Deploying your MkDocs website on Netlify.
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Jekyll
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Jekyll" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Jekyll
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Jekyll/Jekyll-quickstart/" title="Jekyll Quickstart." class="md-nav__link">
+      Jekyll Quickstart.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Jekyll/Github/" title="Publishing your Jekyll website with GitHub pages." class="md-nav__link">
+      Publishing your Jekyll website with GitHub pages.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Jekyll/netlify/" title="Deploying your Jekyll website on Netlify." class="md-nav__link">
+      Deploying your Jekyll website on Netlify.
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Hugo
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Hugo" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Hugo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Hugo Quickstart.
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Hugo Quickstart." class="md-nav__link md-nav__link--active">
+      Hugo Quickstart.
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-hugo-extended" class="md-nav__link">
+    Installing Hugo-extended
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-your-website" class="md-nav__link">
+    Creating your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-your-website" class="md-nav__link">
+    Configuring your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-theme-to-your-website" class="md-nav__link">
+    Adding a theme to your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-contents-to-your-website" class="md-nav__link">
+    Adding contents to your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-hugo-web-server" class="md-nav__link">
+    Starting Hugo web server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-website" class="md-nav__link">
+    Building your website
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Github/" title="Publishing your Hugo website with GitHub pages." class="md-nav__link">
+      Publishing your Hugo website with GitHub pages.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../netlify/" title="Deploying your Hugo website on Netlify." class="md-nav__link">
+      Deploying your Hugo website on Netlify.
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-hugo-extended" class="md-nav__link">
+    Installing Hugo-extended
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-your-website" class="md-nav__link">
+    Creating your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-your-website" class="md-nav__link">
+    Configuring your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-theme-to-your-website" class="md-nav__link">
+    Adding a theme to your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-contents-to-your-website" class="md-nav__link">
+    Adding contents to your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-hugo-web-server" class="md-nav__link">
+    Starting Hugo web server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-website" class="md-nav__link">
+    Building your website
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Hugo Quickstart.</h1>
+                
+                <h3 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>Hugo is a speed optimized static site generating tool written in GO. Hugo can be used to create documentation websites, blogs, portfolio websites, etc. from markdown and HTML.</p>
+<p>In this guide, you will build a documentation website with Hugo-extended and the <a href="http://docsy.dev/">Docsy theme</a>.</p>
+<h3 id="prerequisites"><strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>This guide assumes that you have:</p>
+<ul>
+<li>
+<p>GO installed locally - visit <a href="https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO">ednsquare.com</a> for instructions on how to install Go on your local machine.</p>
+</li>
+<li>
+<p>Homebrew(MacOS and LINUX) - visit <a href="https://brew.sh/">brew.sh</a> for instructions on how to install homebrew on mac and linux.</p>
+</li>
+<li>
+<p>Chocolatey(windows) - visit <a href="https://chocolatey.org/docs/installation">chocolatey.org</a> for instructions on how to install chocolatey on windows.</p>
+</li>
+</ul>
+<h3 id="installing-hugo-extended"><strong>Installing Hugo-extended</strong><a class="headerlink" href="#installing-hugo-extended" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows installation</label><div class="tabbed-content">
+<p>Install hugo-extended with <code>Chocolatey</code> on windows.</p>
+<div class="highlight"><pre><span></span><code>choco install hugo-extended -confirm
+</code></pre></div>
+
+<p>Verify your installation.</p>
+<div class="highlight"><pre><span></span><code>$ hugo version
+Hugo Static Site Generator v0.64.1/extended windows/amd64 BuildDate: unknown
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">MacOS installation</label><div class="tabbed-content">
+<p>Install hugo-extended with <code>homebrew</code> on MacOS.</p>
+<div class="highlight"><pre><span></span><code>brew install hugo
+</code></pre></div>
+
+<p>Verify your installation.</p>
+<div class="highlight"><pre><span></span><code>$ hugo version
+Hugo Static Site Generator v0.64.1/extended darwin/amd64 BuildDate: unknown
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Linux installation</label><div class="tabbed-content">
+<p>Install hugo-extended with <code>homebrew</code> on linux.</p>
+<div class="highlight"><pre><span></span><code>brew install hugo
+</code></pre></div>
+
+<p>Verify your installation.</p>
+<div class="highlight"><pre><span></span><code>$ hugo version
+Hugo Static Site Generator v0.64.1/extended darwin/amd64 BuildDate: unknown
+</code></pre></div>
+
+</div>
+</div>
+<h3 id="creating-your-website"><strong>Creating your website</strong><a class="headerlink" href="#creating-your-website" title="Permanent link">&para;</a></h3>
+<p>Create your new Hugo project with the <code>hugo new site</code> command.</p>
+<div class="highlight"><pre><span></span><code>$ hugo new site hugo-project
+
+Congratulations! Your new Hugo site is created in /Users/sheriff/hugo-project.
+
+Just a few more steps and you<span class="err">&#39;</span>re ready to go:
+
+<span class="m">1</span>. Download a theme into the same-named folder.
+   Choose a theme from https://themes.gohugo.io/ or
+   create your own with the <span class="s2">&quot;hugo new theme &lt;THEMENAME&gt;&quot;</span> command.
+<span class="m">2</span>. Perhaps you want to add some content. You can add single files
+   with <span class="s2">&quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;</span>.
+<span class="m">3</span>. Start the built-in live server via <span class="s2">&quot;hugo server&quot;</span>.
+
+Visit https://gohugo.io/ <span class="k">for</span> quickstart guide and full documentation.
+</code></pre></div>
+
+<p>The <code>hugo new</code> command will also create a directory with the following file structure:</p>
+<div class="highlight"><pre><span></span><code>hugo-project/
+   ├── archetypes
+   ├── config.toml
+   ├── content
+   ├── data
+   ├── layouts
+   ├── static
+   └── themes
+</code></pre></div>
+
+<p>This files are:</p>
+<ul>
+<li><code>archetypes</code>: Directory for storing content template files.</li>
+<li><code>config.toml</code>: Hugo configuration file.</li>
+<li><code>content</code>: Directory for content files.</li>
+<li><code>data</code>: Directory for storing configuration files.</li>
+<li><code>layouts</code>: Directory for storing <code>.html</code> template files.</li>
+<li><code>static</code>: Directory for storing all static contents.</li>
+<li><code>themes</code>: Directory for storing your theme.</li>
+</ul>
+<h3 id="configuring-your-website"><strong>Configuring your website</strong><a class="headerlink" href="#configuring-your-website" title="Permanent link">&para;</a></h3>
+<p>All of your website's configuration details are defined in your <code>config.toml</code> file. Add the following bare minimum configuration into your <code>config.toml</code> file to specify your website's details.</p>
+<div class="highlight"><pre><span></span><code>baseURL = &quot;http://quadrisheriff.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;Hugo Project&quot;
+theme = &quot;docsy&quot;
+</code></pre></div>
+
+<p>Visit <a href="https://gohugo.io/getting-started/configuration/">Hugo Website</a> for more configuration options.</p>
+<h3 id="adding-a-theme-to-your-website"><strong>Adding a theme to your website</strong><a class="headerlink" href="#adding-a-theme-to-your-website" title="Permanent link">&para;</a></h3>
+<p>The <a href="http://docsy.dev/">Docsy theme</a> is a Hugo theme that is built specifically for creating medium to large technical documentation websites. The <code>Docsy</code> theme comes preloaded with basic documentation features like the search bar, the menu, etc.</p>
+<p>To install the <code>Docsy</code> theme:</p>
+<ol>
+<li><code>cd</code> to your project's directory.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> hugo-project
+</code></pre></div></li>
+<li>Install <code>postCSS</code> and <code>autoprefixer</code> .
+<div class="highlight"><pre><span></span><code>sudo npm install -D --save autoprefixer
+sudo npm install -D --save postcss-cli
+</code></pre></div></li>
+<li>Install the <code>Docsy</code> theme by adding it as a git submodule into your project.
+<div class="highlight"><pre><span></span><code>git init
+git submodule add https://github.com/google/docsy.git themes/docsy
+echo &#39;theme = &quot;docsy&quot;&#39; &gt;&gt; config.toml
+git submodule update --init --recursive
+</code></pre></div></li>
+</ol>
+<h3 id="adding-contents-to-your-website"><strong>Adding contents to your website</strong><a class="headerlink" href="#adding-contents-to-your-website" title="Permanent link">&para;</a></h3>
+<p>All your website's content files are stored in the <code>content</code> directory found in your root folder. The website's pages will be rendered with the same content structure as the organized <code>content</code> folder, the top level nested subfolders in the <code>content</code> directory will also determine the layout and sections for your website.</p>
+<p><code>Docsy</code> ships with templates for three type of files in the content directory:</p>
+<ul>
+<li>Documentation files are stored in the <code>docs</code> directory.</li>
+<li>Blog contents are stored in the <code>blog</code> directory.</li>
+<li>Community oriented contents are stored in the <code>community</code>directory.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>content
+    |- docs
+    |- blog
+    |- community
+</code></pre></div>
+
+<p>To add a documentation page to your website:</p>
+<ol>
+<li>Create your documentation markdown or HTML file inside the <code>docs</code> directory.
+<div class="highlight"><pre><span></span><code>touch index.md
+</code></pre></div></li>
+<li>Add the following <code>yaml</code> frontmatter to configure the page's information.
+<div class="highlight"><pre><span></span><code>---
+title: &quot;A new documentation page&quot;
+weight: 1
+type: docs
+description: &gt;
+  A new documentation page for our Hugo website.
+---
+</code></pre></div></li>
+<li>Add markup contents into your page.
+<div class="highlight"><pre><span></span><code># Hugo project website 
+
+This is our new documentation page.
+</code></pre></div>
+To add a custom section into your webite, creating the custom subdirectory inside the <code>content</code> folder, then specify the page's template in the frontmatter of the page.</li>
+</ol>
+<p>Visit the <a href="https://www.docsy.dev/docs/adding-content/content/">Docsy website</a> for more information about adding contents into your website.</p>
+<h3 id="starting-hugo-web-server"><strong>Starting Hugo web server</strong><a class="headerlink" href="#starting-hugo-web-server" title="Permanent link">&para;</a></h3>
+<p>Hugo ships with a web server that has Live reload built in. This allows you to preview your changes realtime when your web server is running.</p>
+<p>Start your web server with the <code>hugo server</code> command.</p>
+<p>The web server will be hosted at <a href="http://loacalhost:1313">http://localhost:1313</a>. The web server will automatically reload when you make any changes in your website's files.</p>
+<h3 id="building-your-website"><strong>Building your website</strong><a class="headerlink" href="#building-your-website" title="Permanent link">&para;</a></h3>
+<p>Build your website with the <code>hugo</code> command. The command will generate all your website's static files and store them in the <code>./public/</code> directory. </p>
+<p>You can deploy your website on different hosting platforms with the generated static files.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../Jekyll/netlify/" title="Deploying your Jekyll website on Netlify." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Deploying your Jekyll website on Netlify.
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Github/" title="Publishing your Hugo website with GitHub pages." class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Publishing your Hugo website with GitHub pages.
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["instant", "tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

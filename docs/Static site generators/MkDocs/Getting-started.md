@@ -1,5 +1,5 @@
 ---
-title: MkDocs Quickstart.
+title: MkDocs Quickstart
 summary: MkDocs quickstart guide.
 authors:
     - Quadri Sheriff 
@@ -9,24 +9,22 @@ authors:
 
 ###**Introduction**
 
-MkDocs is an open-source static site generator geared to creating technical documentation websites. In this guide, you will create a documentation website with MkDocs, and deploy the website to GitHub for hosting with GitHub pages.
+MkDocs is an open-source static site generator geared to creating technical documentation websites. In this guide, you will learn how to build a documentation website with MkDocs.
 
 ###**Prerequisites**
 
 This guide assumes that you have:
  
-  * Python installed locally - visit [this link](https://realpython.com/installing-python/) for instructions on how to install python on mac and windows.
+  * Python installed locally - visit [realpython.com](https://realpython.com/installing-python/) for instructions on how to install python on your local machine.
 
-  * PIP installed locally - visit [this link](https://realpython.com/what-is-pip/) for instructions on how to install 
-  PIP on mac and windows.
-
-  * Git installed locally and GitHub account - visit [this link](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners) for instructions on how to setup Git and GitHub.
+  * `pip` installed locally - visit [realpyhton.com](https://realpython.com/what-is-pip/) for instructions on how to install 
+  `pip` on your local machine.
 
 ---
 
-###**Installing MkDocs with pip**
+###**Installing MkDocs with `pip`**
 
-MkDocs can be installed with pip using the `pip install` command.
+MkDocs can be installed with `pip` using the `pip install` command.
 
 ```Bash
 pip install mkdocs
@@ -53,7 +51,7 @@ This command will generate a new directory with the following file structure:
 
 ```
 mkdocs-project/
-    docs/        
+    docs/   
         index.md 
     mkdocs.yml  
 ``` 
@@ -66,9 +64,7 @@ The following files are:
 
 ###**Configuring your website**
 
-All of MkDocs configurations are done using the `mkdocs.yml` file in the projects folder.
-
-Add the following configuration into your `mkdocs.yml` file to specify your project's information.
+All of MkDocs configurations are done using your `mkdocs.yml` file. Add the following into your `mkdocs.yml` file to specify your website's information.
 
 ```mkdocs.yml
 ## Add your website's information
@@ -79,19 +75,20 @@ site_author: Quadri Sheriff
 
 Visit [MkDocs website](https://www.mkdocs.org/#getting-started) for more configuration options.
 
-###**Adding Contents to your website**
+###**Adding pages into your website**
 
-You can add pages to your website by putting the markdown files in the `docs` folder.
+To add pages to your website, First create the markdown file in your `docs` folder.
 
-Create a second markdown file in the `docs` folder.
+```bash
+# /docs
+
+touch new_page.md
+```
+
+Then, add the following YAML front matter into your page to configure the page's information.
 
 ```
-touch second.md
-```
 
-Edit the page
-
-```
 ---
 title: Second Page. ## page name
 summary: Mkdocs project second page. ## page summary
@@ -99,22 +96,30 @@ authors:
     - Quadri Sheriff ## page author
 ---
 
-This is the second page of our new mkdocs tutorial.
+```
+
+Add markdown contents into the page.
 
 ```
-You can add the new page into the website navigation bar by configuring the `mkdocs.yml` file.
+# Second Page
 
-```mkdocs.yml
-## Add your website's information
-site_name: new-mkdocs-project
+This is the second page of our new mkdocs for material theme tutorial.
+
+```
+
+You can also add the new page into the website navigation bar by configuring your mkdocs.yml file.
+
+```
+# mkdocs.yml
+
+site_name: Mkdocs Project
 site_description: A new mkdocs project
 site_author: Quadri Sheriff
 
-
-## Edit the Nav bar
-nav:
+ 
+nav:       #  Edit the Navbar
 - Home: index.md
-- Second page: second.md
+- New page: new_page.md
 
 ```
 
@@ -141,13 +146,14 @@ INFO    -  Start detecting changes
 The development server will be deployed at [http://localhost:8000](http://localhost:8000). 
 
 
-The development server supports live changes, and will reload automatically to preview any changes made in your documentation files.
+!!! info
+    MkDocs development server supports live changes and will automatically reload to preview any changes made in your documentation files.
 
 You can close the development server by pressing `CTRL C` in your terminal window.
 
 ###**Building your website**
 
-Use the `mkdocs build` command to generate all your websites static files.
+Use the `mkdocs build` command to generate all your website's static files.
 
 ```
 $ mkdocs build
@@ -156,41 +162,7 @@ INFO    -  Building documentation to directory: /Users/sheriff/new-mkdocs-projec
 INFO    -  Documentation built in 0.32 seconds 
 ```
 
-This command will create a site folder where all the static files are stored. You can deploy your website on publishing platforms like AWS or GitHub pages using this files.
-
-###**Deploying your project to GitHub**
-
-To deploy your project to Github
-
-create a new github repository - git@github.com:Quadrisheriff/mkdocs-project.git.
-
-Then, initialize your project directory with git and add a remote origin.
-
-```bash
-$ git init
-
-$ git remote add origin git@github.com:Quadrisheriff/mkdocs-project.git
-
-```
-
-Now, push your directory to github.
-
-```bash
-$ git add .
-
-$ git commit -m 'mkdocs-project'
-
-$ git push --set-upstream origin master
-
-```
-
-###**Publishing your website with GitHub pages**
-
-You can publish your website online directly from GitHub using GitHub pages. Use the `mkdocs gh-deploy` command to publish MkDocs websites with GitHub pages.
-
-```bash
-mkdocs gh-deploy
-```
+This command will create a site folder where all the generated static files are stored. You can deploy your website on publishing platforms like AWS or GitHub pages using this static files.
 
 
 

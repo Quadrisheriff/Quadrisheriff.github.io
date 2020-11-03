@@ -1,0 +1,947 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>Jekyll Quickstart.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.07c9fbf5.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="DocTools" class="md-header-nav__button md-logo" aria-label="DocTools">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            DocTools
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Jekyll Quickstart.
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../MkDocs/Getting-started/" class="md-tabs__link">
+          Documentation Website Generators
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DocTools" class="md-nav__button md-logo" aria-label="DocTools">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    DocTools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Documentation Website Generators
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Documentation Website Generators" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Documentation Website Generators
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      MkDocs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="MkDocs" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        MkDocs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/Getting-started/" title="MkDocs Quickstart" class="md-nav__link">
+      MkDocs Quickstart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/Material-theme/" title="Material for MkDocs Theme Quickstart." class="md-nav__link">
+      Material for MkDocs Theme Quickstart.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/Github/" title="Publishing your MkDocs website with GitHub pages." class="md-nav__link">
+      Publishing your MkDocs website with GitHub pages.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/netlify/" title="Deploying your MkDocs website on Netlify." class="md-nav__link">
+      Deploying your MkDocs website on Netlify.
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Jekyll
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Jekyll" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Jekyll
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Jekyll Quickstart.
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Jekyll Quickstart." class="md-nav__link md-nav__link--active">
+      Jekyll Quickstart.
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-jekyll-gem" class="md-nav__link">
+    Installing Jekyll gem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-up-your-website" class="md-nav__link">
+    Creating up your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-your-website" class="md-nav__link">
+    Configuring your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-just-the-docs-theme" class="md-nav__link">
+    Setting up the Just the Docs theme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-contents-to-your-website" class="md-nav__link">
+    Adding contents to your website
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding contents to your website">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-pages-to-your-website" class="md-nav__link">
+    Adding Pages to your website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-posts-to-your-website" class="md-nav__link">
+    Adding posts to your website
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-jekyll-web-server" class="md-nav__link">
+    Starting the Jekyll web server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-website" class="md-nav__link">
+    Building your website
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Github/" title="Publishing your Jekyll website with GitHub pages." class="md-nav__link">
+      Publishing your Jekyll website with GitHub pages.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../netlify/" title="Deploying your Jekyll website on Netlify." class="md-nav__link">
+      Deploying your Jekyll website on Netlify.
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Hugo
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Hugo" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Hugo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Hugo/Hugo-quickstart/" title="Hugo Quickstart." class="md-nav__link">
+      Hugo Quickstart.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Hugo/Github/" title="Publishing your Hugo website with GitHub pages." class="md-nav__link">
+      Publishing your Hugo website with GitHub pages.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Hugo/netlify/" title="Deploying your Hugo website on Netlify." class="md-nav__link">
+      Deploying your Hugo website on Netlify.
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-jekyll-gem" class="md-nav__link">
+    Installing Jekyll gem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-up-your-website" class="md-nav__link">
+    Creating up your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-your-website" class="md-nav__link">
+    Configuring your website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-just-the-docs-theme" class="md-nav__link">
+    Setting up the Just the Docs theme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-contents-to-your-website" class="md-nav__link">
+    Adding contents to your website
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding contents to your website">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-pages-to-your-website" class="md-nav__link">
+    Adding Pages to your website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-posts-to-your-website" class="md-nav__link">
+    Adding posts to your website
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-jekyll-web-server" class="md-nav__link">
+    Starting the Jekyll web server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-website" class="md-nav__link">
+    Building your website
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Jekyll Quickstart.</h1>
+                
+                <p><img alt="Screen Shot 2020-08-17 at 12 06 41 AM" src="https://user-images.githubusercontent.com/59125401/91368913-367d9580-e802-11ea-9804-767649ed04e5.png" /></p>
+<h3 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>In this guide, I will walk you through the creation of a simple documentation website with Jekyll and the <a href="https://jekyllthemes.io/theme/just-the-docs">Just The Docs</a> theme.</p>
+<p>Jekyll is a free, blog aware, ruby-based, open source static site generator. Jekyll can be used to build blogs, documentation websites, portfolio websites, etc. directly from templates, markdown, and html.</p>
+<h4 id="prerequisites"><strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h4>
+<p>This guide assumes that you have:</p>
+<ul>
+<li>
+<p>Ruby installed locally (version 2.5.0 or above) - visit <a href="https://www.ruby-lang.org/en/documentation/installation/">ruby-lang.org</a> for instructions on how to install Ruby on your local machine.</p>
+</li>
+<li>
+<p>Rubygems installed locally - visit <a href="https://rubygems.org/pages/download">rubygems.org</a> for instructions on how to install Rubygems on your local machine.</p>
+</li>
+<li>
+<p>Bundler installed locally - visit <a href="https://bundler.io/">bundler.io</a> for instructions of how to install Bundler on your local machine.</p>
+</li>
+</ul>
+<hr />
+<h3 id="installing-jekyll-gem"><strong>Installing Jekyll gem</strong><a class="headerlink" href="#installing-jekyll-gem" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows installation</label><div class="tabbed-content">
+<p>Install Jekyll with RubyGem on windows.</p>
+<div class="highlight"><pre><span></span><code>gem install jekyll
+</code></pre></div>
+
+<p>Verify your installation.</p>
+<div class="highlight"><pre><span></span><code>$ jekyll -v
+jekyll <span class="m">4</span>.1.1
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">MacOS installation</label><div class="tabbed-content">
+<p>Install Jekyll with RubyGem on MacOS.</p>
+<div class="highlight"><pre><span></span><code>sudo gem install jekyll
+</code></pre></div>
+
+<p>Verify your installation.</p>
+<div class="highlight"><pre><span></span><code>$ jekyll -v
+jekyll <span class="m">4</span>.1.1
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Linux installation</label><div class="tabbed-content">
+<p>Install Jekyll with RubyGem on Linux.</p>
+<div class="highlight"><pre><span></span><code>sudo gem install jekyll
+</code></pre></div>
+
+<p>Verify your installation.</p>
+<div class="highlight"><pre><span></span><code>$ jekyll -v
+jekyll <span class="m">4</span>.1.1
+</code></pre></div>
+
+</div>
+</div>
+<h3 id="creating-up-your-website"><strong>Creating up your website</strong><a class="headerlink" href="#creating-up-your-website" title="Permanent link">&para;</a></h3>
+<p>Use the <code>Jekyll new</code> command to create a new Jekyll project. </p>
+<div class="highlight"><pre><span></span><code>jekyll new jekyll-project
+</code></pre></div>
+
+<p>This command will generate a directory named <code>jekyll-project</code> with the following directory structure:</p>
+<div class="highlight"><pre><span></span><code>jekyll-project/
+  _posts /
+      welcome-to-jekyll.markdown
+  _config.yml
+   404.html 
+   about.markdown 
+   Gemfile 
+   Gemfile.lock  
+   index.markdown  
+</code></pre></div>
+
+<p>This files are:</p>
+<ul>
+<li><code>_posts</code>- Directory for blog contents.</li>
+<li><code>_config.yml</code>- Jekyll configuration file.</li>
+<li><code>about.markdown</code>- markdown files.</li>
+<li><code>index.markdown</code>- markdown files.</li>
+<li><code>welcome-to-jekyll.markdown</code>- markdown files.</li>
+<li><code>404.html</code> - 404 HTML file.</li>
+<li><code>gemfile</code> and <code>gemfile.lock</code>- Ruby gem files.</li>
+</ul>
+<h3 id="configuring-your-website"><strong>Configuring your website</strong><a class="headerlink" href="#configuring-your-website" title="Permanent link">&para;</a></h3>
+<p>All of Jekyll's confguration are done using your <code>_config.yml</code>. Add the following YAML keys into your <code>_config.yml</code> file to define your website's information.</p>
+<div class="highlight"><pre><span></span><code>title: Jekyll Project                     # The title of your website.
+email: quadri@sheriff.com                 # your email address.
+description: &gt; A new jekyll website       # The description of your website.
+baseurl: &quot;&quot;                               # the subpath of your site, e.g. /blog
+url: http://quadrisheriff.com             # Your website&#39;s base URL.
+twitter_username: quadrisheriff           # Your twitter username.
+github_username:  quadrisheriff           # Your GitHub username.
+</code></pre></div>
+
+<p>Visit <a href="https://jekyllrb.com/docs/configuration/options/">jekyllrb.com</a> for more information about your configuration options.</p>
+<h3 id="setting-up-the-just-the-docs-theme"><strong>Setting up the Just the Docs theme</strong><a class="headerlink" href="#setting-up-the-just-the-docs-theme" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://jekyllthemes.io/theme/just-the-docs">Just The Docs</a> theme is a modern, high customizable, responsive Jekyll theme geared towards building technical documentation websites. </p>
+<p>The <a href="https://jekyllthemes.io/theme/just-the-docs">Just The Docs</a> ships with documentation features like the search bar and menu preinstalled, this allows you to focus on writing good documentation. </p>
+<p>To install and set up the <a href="https://jekyllthemes.io/theme/just-the-docs">Just The Docs</a> theme:</p>
+<ol>
+<li>Add the following line to your <code>gemfile</code>.
+<div class="highlight"><pre><span></span><code>gem &quot;just-the-docs&quot;
+</code></pre></div></li>
+<li>Install the theme and all its required dependecies.
+<div class="highlight"><pre><span></span><code>bundle install
+</code></pre></div></li>
+<li>Change your theme name in your _config.yml file.
+<div class="highlight"><pre><span></span><code>theme: just-the-docs
+</code></pre></div></li>
+</ol>
+<h3 id="adding-contents-to-your-website"><strong>Adding contents to your website</strong><a class="headerlink" href="#adding-contents-to-your-website" title="Permanent link">&para;</a></h3>
+<p>Jekyll allows for the usage of two type of content layouts - the <code>page</code> and <code>post</code> layout. </p>
+<h4 id="adding-pages-to-your-website">Adding Pages to your website<a class="headerlink" href="#adding-pages-to-your-website" title="Permanent link">&para;</a></h4>
+<p>Stand alone contents, documentation pages, etc. are created using the <code>page</code> layout</p>
+<p>To add pages into your website:</p>
+<ol>
+<li>Add your markdown or html files directly into your website's root folder, you can also group your page files into subfolders, this grouping will determine website's structure.
+<div class="highlight"><pre><span></span><code>touch new_page.md
+</code></pre></div></li>
+<li>Add the following <code>YAML</code> front matter into the page to specify the page's information.
+<div class="highlight"><pre><span></span><code>---
+layout: page
+title: New page
+permalink: /newpage/
+---
+</code></pre></div></li>
+<li>Add markdown or HTML content into the page.
+<div class="highlight"><pre><span></span><code># New page
+
+This is a new website page.
+</code></pre></div></li>
+</ol>
+<h4 id="adding-posts-to-your-website">Adding posts to your website<a class="headerlink" href="#adding-posts-to-your-website" title="Permanent link">&para;</a></h4>
+<p>The <code>post</code> layout is for your blog template. <code>post</code> files are created with the <code>YEAR-MONTH-DAY-title.md</code> naming format, and stored in the <code>_posts</code> folder.</p>
+<p>To create a new blog post:</p>
+<ol>
+<li>Navigate to the <code>_posts</code> folder.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> _posts
+</code></pre></div></li>
+<li>Create your markdown or HTML file in the <code>YEAR-MONTH-DAY-title.md</code> format, where <code>YEAR</code> is any 4 digit number, <code>MONTH</code> is any 2 digit number, <code>DAY</code> is any 2 digit number, and<code>title</code> is your blog post title. .
+<div class="highlight"><pre><span></span><code>touch <span class="m">2020</span>-08-18-new_post.md
+</code></pre></div></li>
+<li>Add the <code>post</code> file <code>YAML</code> frontmatter.
+<div class="highlight"><pre><span></span><code>---
+layout: post
+title:  &quot;New Post!&quot;
+---
+</code></pre></div></li>
+<li>Add markdown or HTML contents into your <code>post</code> file.
+<div class="highlight"><pre><span></span><code># New Post.
+
+This is a new blog post.
+</code></pre></div></li>
+</ol>
+<h3 id="starting-the-jekyll-web-server"><strong>Starting the Jekyll web server</strong><a class="headerlink" href="#starting-the-jekyll-web-server" title="Permanent link">&para;</a></h3>
+<p><code>Jekyll</code> ships with a web server that allows you to preview your changes during development. </p>
+<p>Start your web server with the <code>bundle exec jekyll serve</code> command. The web server will be hosted at <a href="http://localhost:4000">http://localhost:4000</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changes made to the _config.yml file will not reflect automatically in your web server, you have to close and restart the server to preview the changes.</p>
+</div>
+<p>Close the web server by pressing <code>CTRL C</code> in your terminal window.</p>
+<h3 id="building-your-website"><strong>Building your website</strong><a class="headerlink" href="#building-your-website" title="Permanent link">&para;</a></h3>
+<p>Build your <code>jekyll</code> website with the<code>jekyll build</code> command. </p>
+<p>This command will generate all your website's static files and store them in a <code>_site</code> directory. You can easily deploy your website on different hosting platforms with the generated static files.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../MkDocs/netlify/" title="Deploying your MkDocs website on Netlify." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Deploying your MkDocs website on Netlify.
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Github/" title="Publishing your Jekyll website with GitHub pages." class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Publishing your Jekyll website with GitHub pages.
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["instant", "tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

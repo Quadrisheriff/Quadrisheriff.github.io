@@ -1,4 +1,4 @@
-site_name: Doc tools
+site_name: DocTools
 
 theme:
   name: material
@@ -12,10 +12,11 @@ theme:
     primary: indigo
     accent: indigo
   font:
-    text: Ubuntu
-    code: Ubuntu Mono
+    text: Roboto
+    code: Roboto
   palette:
-    primary: purple
+    primary: indigo
+    accent: indigo
 
 plugins:
   - search 
@@ -30,3 +31,6 @@ markdown_extensions:
   - pymdownx.superfences
   - meta
   - pymdownx.tabbed
+  - pymdownx.highlight:
+      use_pygments: true
+  - attr_list
